@@ -19,5 +19,5 @@
 
 Route::resources([
     'admin' => 'AdminController',
-    'posts' => 'PostController'
+    'post' => 'PostController'
 ]);
