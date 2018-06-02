@@ -7,8 +7,13 @@
 		}
 		body, html {
     		height: 100%;
-	   		background-color: #474747;
+	   		/*background-color: #474747;*/
+	   		background-image: url("img/4.png");
     		padding: 20px;
+    		background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
 		}
 
 		.parallax {
@@ -58,7 +63,7 @@
 		}
 
 		.content{
-			background-color: #474747;
+			/*background-color: #474747;*/
 		    height: 100%;
 		    background-attachment: fixed;
 		    background-position: center;
@@ -96,10 +101,18 @@
 			    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
 		    </div>
 
+		    <div class="card">
+			    <h2>TITLE HEADING</h2>
+			    <h5>Title description, Dec 7, 2017</h5>
+			    <p>Some text..</p>
+			    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+		    </div>
+
+		<div class="footer">
+			<h2>Footer</h2>
+		</div>
 	</div>
 
-	<div class="footer">
-		<h2>Footer</h2>
-	</div>
+
 
 @endsection
