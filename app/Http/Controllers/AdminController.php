@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Post;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -21,9 +21,9 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return view('admin.create');
     }
 
     /**
@@ -34,7 +34,13 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $posts = Post::create([
+            'title'=>$request->input('title'),
+            'date_posted'=>$request->input('date_posted'),
+            'blog_post'=>$request->input('blog_post')
+         ]);
+
+        return redirect()->route('admin.index');
     }
 
     /**
