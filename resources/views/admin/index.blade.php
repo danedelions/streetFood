@@ -105,8 +105,8 @@ a{
 	<div class="content">
 
 			<div class="card">
-			    <h2>Add New Post</h2>
-
+			    <a href="{{url('admin/create')}}" class="btn btn-success"> Add New Post
+			    </a>
 		    </div>
 
 			<div class="card">
