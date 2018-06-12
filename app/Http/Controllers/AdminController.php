@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use Redirect;
 use App\Post;
+use Session;
+use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,7 +16,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $posts = Post::all();
+        return view('admin.index', compact('posts'));
     }
 
     /**
@@ -36,7 +40,6 @@ class AdminController extends Controller
     {
         $posts = Post::create([
             'title'=>$request->input('title'),
-            'date_posted'=>$request->input('date_posted'),
             'blog_post'=>$request->input('blog_post')
          ]);
 
@@ -49,9 +52,12 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        //
+        $posts = Post::find($postt);
+        dd($posts->toArray());
+        // show the view and pass the users to it
+        return view('admin.show')->with('admin', $posts);
     }
 
     /**
@@ -60,9 +66,10 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        $post = Post::where('id',$post->id)->first();
+        return view('admin.edit', compact('admin'));
     }
 
     /**
@@ -72,9 +79,10 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, Post $post)
     {
-        //
+        $post->where('id', $post->id)->update($request->only(['title', 'blog_post']));
+        return redirect()->route('admin.index');
     }
 
     /**
@@ -83,8 +91,11 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        // redirect
+        Session::flash('message', 'Successfully deleted the User!');
+        return Redirect::to('admin/');
     }
 }

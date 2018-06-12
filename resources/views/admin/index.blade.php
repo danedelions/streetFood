@@ -105,44 +105,25 @@ a{
 	<div class="content">
 
 			<div class="card">
-			    <a href="{{url('admin/create')}}" class="btn btn-success"> Add New Post
-			    </a>
+				<div class="col-sm-6">
+				    <a href="{{url('admin/create')}}" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Add New Post
+				    </a>
+				</div>
 		    </div>
 
+		    @foreach($posts as $row)
 			<div class="card">
-			    <h2>TITLE HEADING</h2>
-			    <h5>Title description, Dec 7, 2017</h5>
+			
+			    <h2>{{$row->title}}</h2>
 			    <ul>
 			    	<li><button class="btn btn-success">Edit</button></li>
 			    	<li><button class="btn btn-danger">Delete</button></li>
 			    </ul>
 		    </div>
-
-		    <div class="card">
-			    <h2>TITLE HEADING</h2>
-			    <h5>Title description, Dec 7, 2017</h5>
-			    <p>Some text..</p>
-			    <ul>
-			    	<li><button class="btn btn-success">Edit</button></li>
-			    	<li><button class="btn btn-danger">Delete</button></li>
-			    </ul>
-		    </div>
-
-		    <div class="card">
-			    <h2>TITLE HEADING</h2>
-			    <h5>Title description, Dec 7, 2017</h5>
-			    <p>Some text..</p>
-			    <ul>
-			    	<li><button class="btn btn-success">Edit</button></li>
-			    	<li><button class="btn btn-danger">Delete</button></li>
-			    </ul>
-		    </div>
-
+		    @endforeach
 		<div class="footer">
 			<h2>Footer</h2>
 		</div>
 	</div>
-
-
 
 @endsection

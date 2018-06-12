@@ -15,7 +15,6 @@
 //     return view('welcome');
 // });
 
-Route::resources([
-    'admin' => 'AdminController',
-    'post' => 'PostController'
-]);
+Route::resource('admin','AdminController');
+Route::get('post', 'PostController@getPostView');
+Route::get('post', 'PostController@showPosts');

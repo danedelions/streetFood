@@ -106,26 +106,13 @@ a{
 	</div>
 
 	<div class="content">
+        @foreach($posts as $row)
 			<div class="card">
-			    <h2>TITLE HEADING</h2>
-			    <h5>Title description, Dec 7, 2017</h5>
-			    <p>Some text..</p>
-			    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+			    <h2>{{$row->title}}</h2>
+			    <p>{{$row->blog_post}}</p>
 		    </div>
+        @endforeach
 
-		    <div class="card">
-			    <h2>TITLE HEADING</h2>
-			    <h5>Title description, Dec 7, 2017</h5>
-			    <p>Some text..</p>
-			    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-		    </div>
-
-		    <div class="card">
-			    <h2>TITLE HEADING</h2>
-			    <h5>Title description, Dec 7, 2017</h5>
-			    <p>Some text..</p>
-			    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-		    </div>
 
 		<div class="footer">
 			<h2>Footer</h2>

@@ -101,32 +101,35 @@ a{
 			</center>			
 		</div>			
 	</div>
+
 	<div class="content">
-
-		{!! Form::open(['method'=>'post', 'route' => 'post.store', 'class' => 'form-group']) !!}
-
-			{{ csrf_field() }}
-
 		<div class="card">
 			<div class="card-body">
-				<div>
-					{!! Form::input('text', 'Title', 'title') !!}
-				</div>
-				<div>
-					{!! Form::textarea('blog_post') !!}
-				</div>
-					<button type="submit" class="btn btn-success">Submit</button>
-				</div>
+					<form method="post" action="{{ route('admin.store')}}">
+					{{csrf_field()}}
+						<div class="form-group col-sm-6">
+							<label>Title</label>
+							<input type="text" name="title" class="form-control"></input>
+						</div>
+						<div class="form-group col-sm-8">
+							<label>Post</label>
+							<textarea class="form-control" name="blog_post" rows="12" maxlength="1024"></textarea>
+						</div>
+
+						<div class="form-group col-sm-6">
+							<button class="btn btn-success">Submit</button>
+						</div>
+					</form>
 			</div>
 		</div>
 
-		{!! Form::close() !!}
 
 
-			<div class="footer">
-			</div>
-
+		<div class="footer">
 		</div>
+
 	</div>
+
+
 
 @endsection
