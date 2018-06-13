@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	@stack('css')
 </head>
 <body> 

@@ -54,7 +54,7 @@ class AdminController extends Controller
      */
     public function show(Post $post)
     {
-        $posts = Post::find($postt);
+        $posts = Post::find($post);
         dd($posts->toArray());
         // show the view and pass the users to it
         return view('admin.show')->with('admin', $posts);
@@ -69,7 +69,7 @@ class AdminController extends Controller
     public function edit(Post $post)
     {
         $post = Post::where('id',$post->id)->first();
-        return view('admin.edit', compact('admin'));
+        return view('admin.edit', compact('post'));
     }
 
     /**
@@ -95,7 +95,7 @@ class AdminController extends Controller
     {
         $post->delete();
         // redirect
-        Session::flash('message', 'Successfully deleted the User!');
+        Session::flash('message', 'Successfully deleted the Post!');
         return Redirect::to('admin/');
     }
 }

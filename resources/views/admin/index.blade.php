@@ -116,13 +116,20 @@ a{
 			
 			    <h2>{{$row->title}}</h2>
 			    <ul>
-			    	<li><button class="btn btn-success">Edit</button></li>
-			    	<li><button class="btn btn-danger">Delete</button></li>
+			    	<li><a href="{{url('admin/'.$row->id.'/edit')}}" class="btn btn-success">Edit</a></li>
+			    	<li>
+                        <form action="{{ route('admin.destroy', ['id' => $row->id]) }}" method="post">    
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE')}}
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </li>
 			    </ul>
 		    </div>
 		    @endforeach
+
 		<div class="footer">
-			<h2>Footer</h2>
+			<h2></h2>
 		</div>
 	</div>
 

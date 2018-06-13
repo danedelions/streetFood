@@ -97,8 +97,8 @@ a{
 				<div class="text">
 					<h1 class="intro">The Street Food Index</h1>
 					<ul id="links">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">About</a></li>
+						<li><a href="{{url('post/')}}">Home</a></li>
+						<li><a href="{{url('post/about')}}">About</a></li>
 					</ul>
 				</div>
 			</center>			
@@ -115,7 +115,7 @@ a{
 
 
 		<div class="footer">
-			<h2>Footer</h2>
+			<h2></h2>
 		</div>
 	</div>
 
