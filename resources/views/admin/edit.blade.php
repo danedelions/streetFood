@@ -109,10 +109,10 @@ a{
             <div class="card">
                 <div class="card-body">
                     <div>
-                        {!! Form::input('text', 'Title','title' )!!}
+                        {!! Form::input('text', 'title' )!!}
                     </div>
                     <div>
-                        {!! Form::textarea('Post', 'blog_post') !!}
+                        {!! Form::textarea('Post', $post->blog_post, ['size' => '50x10']) !!}
                     </div>
                     <div>
                         <button type="submit" class="btn btn-success">Submit</button>
