@@ -90,17 +90,19 @@ a{
 }
 </style>
 @endpush -->
-@section('content')
-	
-	<div class="parallax">
-		<div class="col-sm-12">
-			<center>
-				<div class="text">
-					<h1 class="intro">The Street Food Index</h1>
-				</div>
-			</center>			
-		</div>			
-	</div>
+@section('page-header')
+        
+    <div class="parallax">
+        <div class="col-sm-12">
+            <center>
+                <div class="text">
+                    <h1 class="intro">The Street Food Index</h1>
+                </div>
+            </center>           
+        </div>          
+    </div>
+@endsection
+@section('page-content')
 
 	<div class="content">
 

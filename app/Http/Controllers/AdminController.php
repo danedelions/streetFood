@@ -66,9 +66,9 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        $post = Post::where('id',$post->id)->first();
+        $post = Post::where('id', $id)->first();
         return view('admin.edit', compact('post'));
     }
 
@@ -91,8 +91,9 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
+        $post = Post::where('id', $id)->first();
         $post->delete();
         // redirect
         Session::flash('message', 'Successfully deleted the Post!');

@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @push('css')
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
 @endpush
 @push('css')
-	<style>
-	* {
+    <style>
+    * {
     box-sizing: border-box;
 }
 body, html {
@@ -90,18 +90,19 @@ a{
 </style>
 @endpush
 
-@section('content')
-		
-	<div class="parallax">
-		<div class="col-sm-12">
-			<center>
-				<div class="text">
-					<h1 class="intro">The Street Food Index</h1>
-				</div>
-			</center>			
-		</div>			
-	</div>
+@section('page-header')    
+    <div class="parallax">
+        <div class="col-sm-12">
+            <center>
+                <div class="text">
+                    <h1 class="intro">The Street Food Index</h1>
+                </div>
+            </center>           
+        </div>          
+    </div>
+@endsection
 
+@section('page-content')
 	<div class="content">
 		<div class="card">
 			<div class="card-body">
@@ -117,7 +118,7 @@ a{
 						</div>
 
 						<div class="form-group col-sm-6">
-							<button class="btn btn-success">Submit</button>
+							<button type="submit" class="btn btn-success">Submit</button>
 						</div>
 					</form>
 			</div>

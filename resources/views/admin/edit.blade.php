@@ -89,43 +89,40 @@ a{
 }
 </style>
 @endpush
+@section('page-header')
+        
+    <div class="parallax">
+        <div class="col-sm-12">
+            <center>
+                <div class="text">
+                    <h1 class="intro">The Street Food Index</h1>
+                </div>
+            </center>           
+        </div>          
+    </div>
+@endsection
 
-@section('content')
-		
-	<div class="parallax">
-		<div class="col-sm-12">
-			<center>
-				<div class="text">
-					<h1 class="intro">The Street Food Index</h1>
-				</div>
-			</center>			
-		</div>			
-	</div>
-
+@section('page-content')
 	<div class="content">
 		{!! Form::model($post, ['method'=>'patch', 'route' => ['admin.update', $post->id]]) !!}
-            {{ csrf_field() }}
-        <div class="card">
-            <div class="card-body">
-                <div>
-                    {!! Form::input('text', 'Title', 'title') !!}
-                </div>
-                <div>
-                    {!! Form::textarea('Post', 'blog_post') !!}
-                </div>
-                <div>
-                    <button type="submit" class="btn btn-success">Submit</button>
+        {{ csrf_field() }}
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        {!! Form::input('text', 'Title','title' )!!}
+                    </div>
+                    <div>
+                        {!! Form::textarea('Post', 'blog_post') !!}
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
                 </div>
             </div>
-        </div>
         {!! Form::close() !!}
-		</div>
-
-		<div class="footer">
-		</div>
-
 	</div>
 
-
+	<div class="footer">
+	</div>
 
 @endsection

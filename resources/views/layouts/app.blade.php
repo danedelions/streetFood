@@ -13,6 +13,7 @@
 	@stack('css')
 </head>
 <body> 
-	@yield('content')
+	@yield('page-header')
+	@yield('page-content')
 </body>
 </html>
