@@ -104,7 +104,7 @@ a{
 
 @section('page-content')
 	<div class="content">
-		{!! Form::model($post, ['method'=>'patch', 'route' => ['admin.update', $post->id]]) !!}
+		{!! Form::model($post, ['method'=>'PATCH', 'route' => ['admin.update', $post->id]]) !!}
         {{ csrf_field() }}
             <div class="card">
                 <div class="card-body">
@@ -112,10 +112,10 @@ a{
                         {!! Form::input('text', 'title' )!!}
                     </div>
                     <div>
-                        {!! Form::textarea('Post', $post->blog_post, ['size' => '50x10']) !!}
+                        {!! Form::textarea('post', $post->blog_post, ['size' => '50x10']) !!}
                     </div>
                     <div>
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        {!! Form::submit('Save', ['class' => 'btn btn-success']) !!}
                     </div>
                 </div>
             </div>

@@ -2,25 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
+use App\User;
+use Auth;
 class LoginController extends Controller
 {
     public function getLoginView()
     {
-    	return view('login/login');
+    	return view('login.login');
     }
 
-    // public function doLogin(Request $request){
+    public function doLogin(Request $request){
 
-    // 	//dd($request->toArray());
-    // 	if(Auth::attempt(['firstname' => $request['firstname'], 'password' => $request['password']])){
+    	if(Auth::attempt([$request->input('username') == 'admin', $request->input('password') == 'admin'])){
 
-    // 		return redirect('welcome');
+    		dd($request);
 
-    // 	} else {
+    	} else {
 
-    // 		return redirect('/')->with('errorMsg', 'User is not registered');
-    // 	}
-    // }
+    		return redirect('/')->with('errorMsg', 'User is not registered');
+    	}
+    }
 }

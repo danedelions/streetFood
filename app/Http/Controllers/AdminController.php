@@ -55,7 +55,6 @@ class AdminController extends Controller
     public function show(Post $post)
     {
         $posts = Post::find($post);
-        dd($posts->toArray());
         // show the view and pass the users to it
         return view('admin.show')->with('admin', $posts);
     }

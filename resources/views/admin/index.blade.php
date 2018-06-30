@@ -123,7 +123,7 @@ a{
                         <form action="{{ route('admin.destroy', ['id' => $row->id]) }}" method="post">    
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE')}}
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                         </form>
                     </li>
 			    </ul>

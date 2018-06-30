@@ -125,8 +125,8 @@ a{
     </div>
     @endif
 
-    <form action="{{ url('login') }}" method="post">
-        @csrf
+    <form action="{{ url('doLogin') }}" method="post">
+        {{ csrf_field() }}
         <div class="form-group">
             <label for=""> Username </label>
             <input type="text" class="form-control" required>
