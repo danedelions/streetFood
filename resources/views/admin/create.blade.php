@@ -114,7 +114,7 @@ a{
 						</div>
 						<div class="form-group col-sm-8">
 							<label>Post</label>
-							<textarea class="form-control" name="blog_post" rows="12" maxlength="1024"></textarea>
+							<textarea class="form-control" name="blog_post" rows="12" maxlength="4096"></textarea>
 						</div>
 
 						<div class="form-group col-sm-6">
