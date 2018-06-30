@@ -44,7 +44,7 @@ class AdminController extends Controller
         $posts = Post::create([
             'title'=>$request->input('title'),
             'blog_post'=>$request->input('blog_post'),
-            'date_posted'=> Carbon::now($request->input('date_posted'))->format('Y-m-d H:i:s')
+            'date_posted'=> Carbon::now($request->input('date_posted'))->format('Y-m-d')
          ]);
 
         return redirect()->route('admin.index');

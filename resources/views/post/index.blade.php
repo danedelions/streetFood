@@ -89,7 +89,7 @@ a{
 }
 </style>
 @endpush
-@section('content')
+@section('page-content')
 	
 	<div class="parallax">
 		<div class="col-sm-12">
@@ -109,8 +109,8 @@ a{
         @foreach($posts as $row)
 			<div class="card">
 			    <h2>{{$row->title}}</h2>
-                <h4>{{$row->date_posted}}</h4>
-			    <p>{{$row->blog_post}}</p>
+                <h5><i>Posted on {{$row->date_posted}}</i></h5>
+			    <p style="word-break: break-all; text-align: justify;white-space: pre-line;">{{$row->blog_post}}</p>
 		    </div>
         @endforeach
 
