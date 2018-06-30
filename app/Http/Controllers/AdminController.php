@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Redirect;
+use Carbon\Carbon;
 use App\Post;
 use Session;
 use App\Http\Requests\PostRequest;
@@ -38,9 +39,12 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
+
+
         $posts = Post::create([
             'title'=>$request->input('title'),
-            'blog_post'=>$request->input('blog_post')
+            'blog_post'=>$request->input('blog_post'),
+            'date_posted'=> Carbon::now($request->input('date_posted'))->format('Y-m-d')
          ]);
 
         return redirect()->route('admin.index');
@@ -56,7 +60,7 @@ class AdminController extends Controller
     {
         $posts = Post::find($post);
         // show the view and pass the users to it
-        return view('admin.show')->with('admin', $posts);
+        return view('admin.show')->with('admin', $posts)->first();
     }
 
     /**

@@ -11,4 +11,6 @@ class Post extends Model
         'date_posted',
         'blog_post'
     ];
+
 }
+

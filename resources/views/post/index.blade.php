@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@push('css')
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
-@endpush
 <!-- @push('css')
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
+@endpush -->
+@push('css')
 	<style>
 	* {
     box-sizing: border-box;
@@ -88,8 +88,8 @@ a{
     color: white;
 }
 </style>
-@endpush -->
-@section('content')
+@endpush
+@section('page-content')
 	
 	<div class="parallax">
 		<div class="col-sm-12">
@@ -109,7 +109,8 @@ a{
         @foreach($posts as $row)
 			<div class="card">
 			    <h2>{{$row->title}}</h2>
-			    <p>{{$row->blog_post}}</p>
+                <h5><i>Posted on {{$row->date_posted}}</i></h5>
+			    <p style="word-break: break-all; text-align: justify;white-space: pre-line;">{{$row->blog_post}}</p>
 		    </div>
         @endforeach
 
