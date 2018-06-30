@@ -25,7 +25,8 @@ class PostRequest extends FormRequest
     {
         return [
             'title'      => 'required',
-            'blog_post'  =>   'required|unique'
+            'blog_post'  =>   'required|unique',
+            'date_posted' => 'required'
         ];
     }
 }

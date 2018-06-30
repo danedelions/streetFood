@@ -16,6 +16,7 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+            $table->date('date_posted');
             $table->string('blog_post');
             $table->rememberToken();
             $table->timestamps();

@@ -17,7 +17,7 @@ class PostController extends Controller
          public function showPosts(){
 
     	    $posts = Post::all();
-    		return view('post/index')->with('posts', $posts);
+    		return view('post/index')->with('posts', $posts)->first();
     	}
 
 

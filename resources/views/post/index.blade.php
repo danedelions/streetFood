@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@push('css')
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
-@endpush
 <!-- @push('css')
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
+@endpush -->
+@push('css')
 	<style>
 	* {
     box-sizing: border-box;
@@ -88,7 +88,7 @@ a{
     color: white;
 }
 </style>
-@endpush -->
+@endpush
 @section('content')
 	
 	<div class="parallax">
@@ -109,6 +109,7 @@ a{
         @foreach($posts as $row)
 			<div class="card">
 			    <h2>{{$row->title}}</h2>
+                <h4>{{$row->date_posted}}</h4>
 			    <p>{{$row->blog_post}}</p>
 		    </div>
         @endforeach
