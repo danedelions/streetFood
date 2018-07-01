@@ -126,15 +126,15 @@ a{
     @endif
 
     <form action="{{ url('doLogin') }}" method="post">
-        {{ csrf_field() }}
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="form-group">
             <label for=""> Username </label>
-            <input type="text" class="form-control" required>
+            <input type="text" name="username" class="form-control" required>
         </div>
 
         <div class="form-group">
             <label for=""> Password </label>
-            <input type="password" class="form-control" required>
+            <input type="password" name="password" class="form-control" required>
         </div>
 
         <button class="btn btn-success">Submit</button>

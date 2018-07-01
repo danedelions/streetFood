@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use DB;
 class LoginController extends Controller
 {
     public function getLoginView()
@@ -15,13 +16,15 @@ class LoginController extends Controller
 
     public function doLogin(Request $request){
 
-    	if(Auth::attempt([$request->input('username') == 'admin', $request->input('password') == 'admin'])){
+        $username = $request->input('username');
+        $password = $request->input('password');
+        
+        $checkLogin = DB::table('users')->where(['username'=>$username, 'password'=> $password])->get();
 
-    		dd($request);
-
-    	} else {
-
-    		return redirect('/')->with('errorMsg', 'User is not registered');
-    	}
+        if(count($checkLogin) > 0){
+            echo "Login Successfull";
+        }else{
+            echo "Login not Successfull";
+        }
     }
 }
