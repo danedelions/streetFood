@@ -22,9 +22,9 @@ class LoginController extends Controller
         $checkLogin = DB::table('users')->where(['username'=>$username, 'password'=> $password])->get();
 
         if(count($checkLogin) > 0){
-            echo "Login Successfull";
+            return redirect(route('admin.index'))->with('success', 'Welcome! Log in successful!');
         }else{
-            echo "Login not Successfull";
+            return back()->with('warning', 'Invalid data passed!');
         }
     }
 }
