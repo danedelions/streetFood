@@ -91,22 +91,17 @@ a{
 @endpush
 
 @section('page-header')    
-    <div class="parallax">
-        <div class="col-sm-12">
-            <center>
-                <div class="text">
-                    <h1 class="intro">The Street Food Index</h1>
-                </div>
-            </center>           
-        </div>          
+    <div class="container">
+        <h1 class="h1">Add New Post</h1>
     </div>
+    <hr>
 @endsection
 
 @section('page-content')
 	<div class="content">
 		<div class="card">
 			<div class="card-body">
-					<form method="post" action="{{ route('admin.store')}}">
+					<form method="post" action="{{ route('admin.store')}}" class="form-group">
 					{{csrf_field()}}
 						<div class="form-group col-sm-6">
 							<label>Title</label>
@@ -117,10 +112,11 @@ a{
 							<textarea class="form-control" name="blog_post" rows="12" maxlength="4096"></textarea>
 						</div>
 
-						<div class="form-group col-sm-6">
-							<button type="submit" class="btn btn-success">Submit</button>
-						</div>
+                        <div class="form-group col-sm-6">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
 					</form>
+
 			</div>
 		</div>
 

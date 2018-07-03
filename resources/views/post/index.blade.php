@@ -89,27 +89,36 @@ a{
 }
 </style>
 @endpush
+@section('page-header')
+    <div class="parallax">
+        <div class="col-sm-12">
+            <center>
+                <div class="text">
+                    <h1 class="intro">The Street Food Index</h1>
+                    <ul id="links">
+                        <li><a href="{{url('post/')}}">Home</a></li>
+                        <li><a href="{{url('post/about')}}">About</a></li>   
+                    </ul>
+                </div>
+            </center>           
+        </div>          
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $(".get-about").click(function(){
+                $(this).closest('ul').find('.modal').modal('show');
+            });
+        });
+    </script>
+@endsection
 @section('page-content')
-	
-	<div class="parallax">
-		<div class="col-sm-12">
-			<center>
-				<div class="text">
-					<h1 class="intro">The Street Food Index</h1>
-					<ul id="links">
-						<li><a href="{{url('post/')}}">Home</a></li>
-						<li><a href="{{url('post/about')}}">About</a></li>
-					</ul>
-				</div>
-			</center>			
-		</div>			
-	</div>
 
 	<div class="content">
         @foreach($posts as $row)
 			<div class="card">
 			    <h2>{{$row->title}}</h2>
-                <h5><i>Posted on {{$row->date_posted}}</i></h5>
+                <h5><i>Posted on {{ date('D d-M-Y  g:i:s A',$row->created_at->timestamp) }}</i></h5>
 			    <p style="word-break: break-all; text-align: justify;white-space: pre-line;">{{$row->blog_post}}</p>
 		    </div>
         @endforeach
@@ -119,7 +128,5 @@ a{
 			<h2></h2>
 		</div>
 	</div>
-
-
 
 @endsection

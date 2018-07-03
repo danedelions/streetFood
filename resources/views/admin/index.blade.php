@@ -117,7 +117,7 @@ a{
 			<div class="card">
 			
 			    <h2>{{$row->title}}</h2>
-                <h6>Posted on {{ date('D m Y  g:i:s A'  , strtotime($row->created_at))}}</h6>
+                <h5>{{ date('D d-M-Y  g:i:s A',$row->created_at->timestamp) }}</h5>
 			    <ul>
 			    	<li><a href="{{url('admin/'.$row->id.'/edit')}}" class="btn btn-success">Edit</a></li>
 			    	<li>

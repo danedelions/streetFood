@@ -17,7 +17,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::latest('id')->get();
         return view('admin.index', compact('posts'));
     }
 
@@ -43,8 +43,7 @@ class AdminController extends Controller
 
         $posts = Post::create([
             'title'=>$request->input('title'),
-            'blog_post'=>$request->input('blog_post'),
-            'date_posted'=> Carbon::now($request->input('date_posted'))->format('Y-m-d')
+            'blog_post'=>$request->input('blog_post')
          ]);
 
         return redirect()->route('admin.index');

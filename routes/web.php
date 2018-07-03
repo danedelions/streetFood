@@ -14,12 +14,12 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
 Route::get('/', 'LoginController@getLoginView');
 Route::post('doLogin', 'LoginController@doLogin');
 
 Route::resource('admin','AdminController');
 
-
-
+Route::get('post','PostController@getAboutView');
 Route::get('post','PostController@getPostView');
 Route::get('post','PostController@showPosts');

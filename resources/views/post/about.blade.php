@@ -109,7 +109,7 @@ a{
 			<div class="card">
 
 			    <p>
-                    <h1 class="text">THIS IS THE ABOUT PAGE</h1>         
+                    <h1 class="text">The Street Food Index is a food blog created by Ferdinand Bryle, Daniela, and Tiffany.</h1>         
                 </p>
 		    </div>
 

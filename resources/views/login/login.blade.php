@@ -106,12 +106,10 @@ a{
     </div>
 @endsection
 @section('page-content')
-	
-	
 
-	<div class="content">
-
-<h1>User Login</h1>
+<div class="content">
+    <div class="card" style="padding-left: 26em;">
+    <h1>User Login</h1>
     <br><br>
     @if(session('errorMsg'))
     <div class="alert alert-danger">
@@ -125,25 +123,29 @@ a{
     </div>
     @endif
 
-    <form action="{{ url('doLogin') }}" method="post">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <div class="form-group">
-            <label for=""> Username </label>
-            <input type="text" name="username" class="form-control" required>
-        </div>
+    <div class="card col-sm-6">
+        <form action="{{ url('doLogin') }}" method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div class="form-group">
+                <label for=""> Username </label>
+                <input type="text" name="username" class="form-control" required>
+            </div>
 
-        <div class="form-group">
-            <label for=""> Password </label>
-            <input type="password" name="password" class="form-control" required>
-        </div>
+            <div class="form-group">
+                <label for=""> Password </label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
 
-        <button class="btn btn-success">Submit</button>
-    </form>
+            <button class="btn btn-success">Submit</button>
+        </form>    
+    </div>
+    <br><br>
+    </div>
 
-		<div class="footer">
-			<h2>Footer</h2>
-		</div>
+	<div class="footer">
+		
 	</div>
+</div>
 
 
 

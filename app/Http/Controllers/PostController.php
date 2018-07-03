@@ -10,15 +10,13 @@ class PostController extends Controller
     		return view('post/index');
     	}
 
-    	public function getAboutView(){
-    		return view('post/about');
-    	}
-
          public function showPosts(){
 
-    	    $posts = Post::all();
+    	    $posts = Post::latest('id')->get();
     		return view('post/index')->with('posts', $posts);
     	}
 
-
+        public function getAboutView(){
+            return view('post/about');
+        }
 }

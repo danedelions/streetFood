@@ -90,37 +90,36 @@ a{
 </style>
 @endpush
 @section('page-header')
-        
-    <div class="parallax">
-        <div class="col-sm-12">
-            <center>
-                <div class="text">
-                    <h1 class="intro">The Street Food Index</h1>
-                </div>
-            </center>           
-        </div>          
+    <div class="container">
+        <h1 class="h1">Edit Post</h1>
     </div>
+    <hr>
 @endsection
 
 @section('page-content')
 	<div class="content">
-		{!! Form::model($post, ['method'=>'PATCH', 'route' => ['admin.update', $post->id]]) !!}
+        <div class="form-group">
+        {!! Form::model($post, ['method'=>'PATCH','route' => ['admin.update', $post->id]]) !!}
         {{ csrf_field() }}
             <div class="card">
                 <div class="card-body">
-                    <div>
-                        {!! Form::input('text', 'title' )!!}
+                    <div class="form-group col-sm-8">
+                        <label>Title</label>
+                        {!! Form::input('text','title', $post->title, ['class' => 'form-control'])!!}
+                    </div>
+                    <div class="form-group col-sm-8">
+                        <label>Post</label>
+                        {!! Form::textarea('post', $post->blog_post, ['size' => '50x10', 'class' => 'form-control']) !!}
                     </div>
                     <div>
-                        {!! Form::textarea('post', $post->blog_post, ['size' => '50x10']) !!}
-                    </div>
-                    <div>
-                        {!! Form::submit('Save', ['class' => 'btn btn-success']) !!}
+                        {!! Form::submit('Save', ['type' => 'submit','class' => 'btn btn-success']) !!}
                     </div>
                 </div>
             </div>
         {!! Form::close() !!}
-	</div>
+    </div>            
+        </div>
+
 
 	<div class="footer">
 	</div>
