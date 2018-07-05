@@ -28,6 +28,6 @@ Route::get('about', function(){
 Route::get('post','PostController@getPostView');
 Route::get('post','PostController@showPosts');
 
-Route::get('comment', 'CommentController@showComments');
+Route::get('{post}/comment', 'CommentController@showComments');
 
 // Route::get('/home', 'HomeController@index')->name('home');

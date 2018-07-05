@@ -10,7 +10,7 @@
 body, html {
     height: 100%;
     /*background-color: #474747;*/
-    background-image: url("img/4.png");
+    background-image: url("{{asset('img/4.png')}}");
     padding: 20px;
     background-attachment: fixed;
     background-position: center;
@@ -20,7 +20,7 @@ body, html {
 
 .parallax {
     /* The image used */
-    background-image: url("img/1.jpg");
+    background-image: url("{{asset('img/1.jpg')}}");
 
     /* Set a specific height */
     height: 400px;
@@ -91,7 +91,7 @@ a{
 @endpush
 @section('page-header')
     <div class="container">
-        <h1 class="h1">Edit Post</h1>
+        <h1 class="h1" style="color: white;">Edit Post</h1>
     </div>
     <hr>
 @endsection

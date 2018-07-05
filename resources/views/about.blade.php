@@ -142,7 +142,7 @@ a{
 	</div>
 
     <div class="scrollContainer section-2">
-
+        <div class="text"></div>
 
     </div>
 
@@ -163,15 +163,6 @@ a{
                     var height = $element.height()-18;
                     $(this).css('backgroundPosition', '50% ' + Math.round((height - pos) * velocity) + 'px'); 
                 }); 
-
-                    $('#text').animate({
-                        scrollLeft: $('#text').css('left')
-                    }, 500, function() {
-
-                        $('html, body').animate({
-                            scrollLeft: 0
-                        }, 500);
-
             };
 
                 $(window).bind('scroll', update);

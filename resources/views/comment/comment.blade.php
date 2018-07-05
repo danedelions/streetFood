@@ -1,16 +1,14 @@
 @extends('layouts.app')
-<!-- @push('css')
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
-@endpush -->
+
 @push('css')
-	<style>
+<style>
 	* {
     box-sizing: border-box;
 }
 body, html {
     height: 100%;
     /*background-color: #474747;*/
-    background-image: url("img/4.png");
+    background-image: url("{{asset('img/4.png')}}");
     padding: 20px;
     background-attachment: fixed;
     background-position: center;
@@ -20,7 +18,7 @@ body, html {
 
 .parallax {
     /* The image used */
-    background-image: url("img/1.jpg");
+    background-image: url("{{asset('img/1.jpg')}}");
 
     /* Set a specific height */
     height: 400px;
@@ -97,26 +95,35 @@ a{
                     <h1 class="intro">The Street Food Index</h1>
                     <ul id="links">
                         <li><a href="{{url('post/')}}">Home</a></li>
-                        <li><a href="{{url('post/about')}}">About</a></li>   
+                        <li><a href="{{url('about')}}">About</a></li>   
                     </ul>
                 </div>
             </center>           
         </div>          
     </div>
 
-    <script>
-        $(document).ready(function(){
-            $(".get-about").click(function(){
-                $(this).closest('ul').find('.modal').modal('show');
-            });
-        });
-    </script>
 @endsection
 @section('page-content')
 
     <div class="content">
             <div class="card">
-                <h2>{{$posts}}</h2>
+                <h2>{{$post->title}}</h2>
+                <h5><i>{{ date('D d-M-Y  g:i:s A',$post->created_at->timestamp) }}</i></h5>
+                <p style="word-break: break-all; text-align: justify;white-space: pre-line;">{{$post->blog_post}}</p>
+                <br>
+                <hr>
+                <form class="form-group" method="POST" action="/">
+                    <div class="form-group col-sm-8">
+                        <input type="text" class="form-control" placeholder="Name (optional)..."></input>
+                    </div>
+                    <div class="form-group col-sm-8">
+                        <textarea class="form-control" placeholder="Comment here..."></textarea>
+                    </div>
+                    <div class="form-group col-sm-8">
+                        <button type="submit" class="btn btn-sm btn-success">Submit</button>
+                    </div>
+                    
+                </form>
             </div>
     </div>
 

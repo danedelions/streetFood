@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-    public function showComments(Post $posts)
+    public function showComments(Post $post)
     {
-    	$posts = Post::find('id');
-        return view('comment.comment', compact('posts'));
+    	// $post = Post::find('id');
+        return view('comment.comment', compact('post'));
     }
 
     public function addComment(Request $request)
