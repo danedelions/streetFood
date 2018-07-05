@@ -15,8 +15,4 @@ class PostController extends Controller
     	    $posts = Post::latest('id')->get();
     		return view('post/index')->with('posts', $posts);
     	}
-
-        public function getAboutView(){
-            return view('post/about');
-        }
 }

@@ -97,7 +97,7 @@ a{
                     <h1 class="intro">The Street Food Index</h1>
                     <ul id="links">
                         <li><a href="{{url('post/')}}">Home</a></li>
-                        <li><a href="{{url('post/about')}}">About</a></li>   
+                        <li><a href="{{url('about')}}">About</a></li>   
                     </ul>
                 </div>
             </center>           
@@ -118,9 +118,9 @@ a{
         @endforeach
 
 
-		<div class="footer">
+<!-- 		<div class="footer">
 			<h2></h2>
-		</div>
+		</div> -->
 	</div>
 
 @endsection

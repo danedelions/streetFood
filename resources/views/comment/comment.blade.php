@@ -118,11 +118,6 @@ a{
             <div class="card">
                 <h2>{{$posts}}</h2>
             </div>
-
-
-        <div class="footer">
-            <h2></h2>
-        </div>
     </div>
 
 @endsection

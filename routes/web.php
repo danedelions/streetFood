@@ -21,7 +21,10 @@ Route::post('doLogin', 'LoginController@doLogin');
 
 Route::resource('admin','AdminController');
 
-Route::get('post','PostController@getAboutView');
+Route::get('about', function(){
+	return View('about');
+});
+
 Route::get('post','PostController@getPostView');
 Route::get('post','PostController@showPosts');
 
