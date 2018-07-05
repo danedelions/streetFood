@@ -89,22 +89,23 @@ a{
 }
 </style>
 @endpush
-@section('content')
-	
-	<div class="parallax">
-		<div class="col-sm-12">
-			<center>
-				<div class="text">
-					<h1 class="intro">The Street Food Index</h1>
-					<ul id="links">
-						<li><a href="{{url('post/')}}">Home</a></li>
-						<li><a href="{{url('post/about')}}">About</a></li>
-					</ul>
-				</div>
-			</center>			
-		</div>			
-	</div>
 
+@section('page-header')
+    <div class="parallax">
+        <div class="col-sm-12">
+            <center>
+                <div class="text">
+                    <h1 class="intro">The Street Food Index</h1>
+                    <ul id="links">
+                        <li><a href="{{url('post/')}}">Home</a></li>
+                        <li><a href="{{url('post/about')}}">About</a></li>
+                    </ul>
+                </div>
+            </center>           
+        </div>          
+    </div>
+@endsection
+@section('page-content')
 	<div class="content">
 			<div class="card">
 
@@ -118,7 +119,4 @@ a{
 			<h2></h2>
 		</div>
 	</div>
-
-
-
 @endsection

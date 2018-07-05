@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@push('css')
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
-@endpush
 <!-- @push('css')
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
+@endpush -->
+@push('css')
 	<style>
 	* {
     box-sizing: border-box;
@@ -88,43 +88,41 @@ a{
     color: white;
 }
 </style>
-@endpush -->
+@endpush
+@section('page-header')
+    <div class="parallax">
+        <div class="col-sm-12">
+            <center>
+                <div class="text">
+                    <h1 class="intro">The Street Food Index</h1>
+                    <ul id="links">
+                        <li><a href="{{url('post/')}}">Home</a></li>
+                        <li><a href="{{url('post/about')}}">About</a></li>   
+                    </ul>
+                </div>
+            </center>           
+        </div>          
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $(".get-about").click(function(){
+                $(this).closest('ul').find('.modal').modal('show');
+            });
+        });
+    </script>
+@endsection
 @section('page-content')
 
-<div class="content">
-    <div align="center"> 
-        <div style="padding:2em;">
-        @if(session('errorMsg'))
-        <div class="alert alert-danger">
-            <p>{{session('errorMsg')}}</p>
-        </div>
-        @endif
+    <div class="content">
+            <div class="card">
+                <h2>{{$posts}}</h2>
+            </div>
 
-        @if(session('success'))
-        <div class="alert alert-success">
-            <p>{{session('success')}}</p>
-        </div>
-        @endif
 
-        <div class="card col-sm-4">
-            <h1>User Login</h1>
-            <form action="{{ url('doLogin') }}" method="post">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <div class="form-group">
-                    <label for=""> Username </label>
-                    <input type="text" name="username" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for=""> Password </label>
-                    <input type="password" name="password" class="form-control" required>
-                </div>
-                <button class="btn btn-success">Submit</button>
-            </form>    
-        </div>
+        <div class="footer">
+            <h2></h2>
         </div>
     </div>
-</div>
-
-
 
 @endsection

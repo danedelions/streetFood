@@ -103,14 +103,6 @@ a{
             </center>           
         </div>          
     </div>
-
-    <script>
-        $(document).ready(function(){
-            $(".get-about").click(function(){
-                $(this).closest('ul').find('.modal').modal('show');
-            });
-        });
-    </script>
 @endsection
 @section('page-content')
 
@@ -120,6 +112,8 @@ a{
 			    <h2>{{$row->title}}</h2>
                 <h5><i>Posted on {{ date('D d-M-Y  g:i:s A',$row->created_at->timestamp) }}</i></h5>
 			    <p style="word-break: break-all; text-align: justify;white-space: pre-line;">{{$row->blog_post}}</p>
+                <hr>
+                <a href="{{url('/comment')}}" style="color: black;">Add comment</a>
 		    </div>
         @endforeach
 
