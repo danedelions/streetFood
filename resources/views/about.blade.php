@@ -134,7 +134,7 @@ a{
 @endsection
 @section('page-content')
 	<div class="scrollContainer section-1">
-        <div class="text">
+        <div class="text" id="text">
             <p style="text-align: justify; color: white;">
                 <h1>What is The Street Food Index?</h1>
             The Streetfood Index is a blog that talks about street food from all around the world. Learn more about the savory and mouth-watering street food and where to find them. In this blog, we highly encourage everyone to travel around and embrace the street food because by embracing street food, we embrace culture and gain knowledge.</p>
@@ -163,9 +163,19 @@ a{
                     var height = $element.height()-18;
                     $(this).css('backgroundPosition', '50% ' + Math.round((height - pos) * velocity) + 'px'); 
                 }); 
+
+                    $('#text').animate({
+                        scrollLeft: $('#text').css('left')
+                    }, 500, function() {
+
+                        $('html, body').animate({
+                            scrollLeft: 0
+                        }, 500);
+
             };
 
-            $(window).bind('scroll', update);
-                    });
+                $(window).bind('scroll', update);
+            });
+
     </script>
 @endsection
