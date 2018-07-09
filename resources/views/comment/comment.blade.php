@@ -112,6 +112,7 @@ a{
                 <p style="word-break: break-all; text-align: justify;white-space: pre-line;">{{$post->blog_post}}</p>
                 <br>
                 <hr>
+                <h4>Comments</h4><br>
                 @foreach($comments as $row)
                 
                     <h5>{{$row->name}}</h5>

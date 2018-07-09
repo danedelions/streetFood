@@ -11,7 +11,7 @@ class CommentController extends Controller
     public function showComments(Post $post)
     {
     	// $post = Post::find('id');
-        $comments = Comment::all();
+        $comments = Comment::all()->where('post_id','=',$post->id);
         // dd($comments->toArray());
         return view('comment.comment', compact(['post'],['comments']));
     }
