@@ -27,4 +27,9 @@ class LoginController extends Controller
             return back()->with('warning', 'Invalid data passed!');
         }
     }
+
+    // public function userLogout(){
+    //     Auth::logout();
+    //     return redirect('/');
+    // }
 }

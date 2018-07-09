@@ -18,6 +18,7 @@
 
 Route::get('/', 'LoginController@getLoginView');
 Route::post('doLogin', 'LoginController@doLogin');
+Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::resource('admin','AdminController');
 
@@ -29,5 +30,10 @@ Route::get('post','PostController@getPostView');
 Route::get('post','PostController@showPosts');
 
 Route::get('{post}/comment', 'CommentController@showComments');
+Route::post('{post}/comment', 'CommentController@addComment');
 
 // Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

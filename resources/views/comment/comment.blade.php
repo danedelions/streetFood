@@ -112,12 +112,13 @@ a{
                 <p style="word-break: break-all; text-align: justify;white-space: pre-line;">{{$post->blog_post}}</p>
                 <br>
                 <hr>
-                <form class="form-group" method="POST" action="/">
+                <form class="form-group" method="POST" action="{{action('CommentController@addComment')}}">
+                    <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                     <div class="form-group col-sm-8">
-                        <input type="text" class="form-control" placeholder="Name (optional)..."></input>
+                        <input type="text" class="form-control" name="name" placeholder="Name (optional)..."></input>
                     </div>
                     <div class="form-group col-sm-8">
-                        <textarea class="form-control" placeholder="Comment here..."></textarea>
+                        <textarea class="form-control" name="comment" placeholder="Comment here..."></textarea>
                     </div>
                     <div class="form-group col-sm-8">
                         <button type="submit" class="btn btn-sm btn-success">Submit</button>

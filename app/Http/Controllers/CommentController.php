@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Post;
 use App\Comment;
 use Illuminate\Http\Request;
@@ -20,5 +21,14 @@ class CommentController extends Controller
     			'post_id' => $request->post_id,
     			'comment' =>$request->input('comment')
     		]);
+
+        return redirect('comment');
+
+    }
+
+    public function displayComments($id)
+    {
+        $comments = Comment::latest('id')->get();
+        return view('comment.comment', compact('comments'));
     }
 }
