@@ -18,9 +18,9 @@ class CommentController extends Controller
     {
     	$comments = Comment::create([
     			'name' => $request->input('name'),
-    			'post_id' => $request->post_id,
-    			'comment' =>$request->input('comment')
-    		]);
+    			'comment' =>$request->input('comment'),
+                'post_id' => $request->postId
+    	]);
 
         return redirect('comment');
 

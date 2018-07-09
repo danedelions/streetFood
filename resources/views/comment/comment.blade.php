@@ -112,7 +112,7 @@ a{
                 <p style="word-break: break-all; text-align: justify;white-space: pre-line;">{{$post->blog_post}}</p>
                 <br>
                 <hr>
-                <form class="form-group" method="POST" action="{{action('CommentController@addComment')}}">
+                <form class="form-group" method="POST" action='{{url("{$post->id}/comment")}}'>
                     <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                     <div class="form-group col-sm-8">
                         <input type="text" class="form-control" name="name" placeholder="Name (optional)..."></input>

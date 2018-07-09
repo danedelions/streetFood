@@ -30,7 +30,7 @@ Route::get('post','PostController@getPostView');
 Route::get('post','PostController@showPosts');
 
 Route::get('{post}/comment', 'CommentController@showComments');
-Route::post('{post}/comment', 'CommentController@addComment');
+Route::post('{postId}/comment', 'CommentController@addComment');
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
