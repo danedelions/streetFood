@@ -25,8 +25,7 @@ class CommentRequest extends FormRequest
     {
         return [
             'name'      => 'nullable',
-            'comment'  =>   'required',
-            'post_id' => 'required'
+            'comment'  =>   'required'
         ];
     }
 }

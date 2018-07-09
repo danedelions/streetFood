@@ -108,7 +108,7 @@ a{
         @foreach($posts as $row)
 			<div class="card">
 			    <h2>{{$row->title}}</h2>
-                <h5><i>Posted on {{ date('D d-M-Y  g:i:s A',$row->created_at->timestamp) }}</i></h5>
+                <h5>Posted on {{ date('D d-M-Y  g:i:s A',$row->created_at->timestamp) }}</h5>
 			    <p style="word-break: break-all; text-align: justify;white-space: pre-line;">{{$row->blog_post}}</p>
                 <hr>
                 <a href='{{url("{$row->id}/comment")}}' style="color: black;">Add comment</a>

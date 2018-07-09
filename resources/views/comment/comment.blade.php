@@ -112,6 +112,17 @@ a{
                 <p style="word-break: break-all; text-align: justify;white-space: pre-line;">{{$post->blog_post}}</p>
                 <br>
                 <hr>
+                @foreach($comments as $row)
+                
+                    <h5>{{$row->name}}</h5>
+                    <h6>Posted on {{ date('D d-M-Y  g:i:s A',$row->created_at->timestamp) }}</h6>
+                        <br>
+                    <span><p>{{$row->comment}}</p></span>
+                    <hr>
+            
+                @endforeach
+
+                <hr>
                 <form class="form-group" method="POST" action='{{url("{$post->id}/comment")}}'>
                     <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                     <div class="form-group col-sm-8">

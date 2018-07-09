@@ -11,7 +11,9 @@ class CommentController extends Controller
     public function showComments(Post $post)
     {
     	// $post = Post::find('id');
-        return view('comment.comment', compact('post'));
+        $comments = Comment::all();
+        // dd($comments->toArray());
+        return view('comment.comment', compact(['post'],['comments']));
     }
 
     public function addComment(Request $request)
@@ -22,7 +24,7 @@ class CommentController extends Controller
                 'post_id' => $request->postId
     	]);
 
-        return redirect('comment');
+        return redirect()->back();
 
     }
 
