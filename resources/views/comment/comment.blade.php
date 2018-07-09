@@ -123,7 +123,7 @@ a{
             
                 @endforeach
 
-                <hr>
+                <h4>Comment as guest</h4><br>
                 <form class="form-group" method="POST" action='{{url("{$post->id}/comment")}}'>
                     <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                     <div class="form-group col-sm-8">
