@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Post;
 use App\Comment;
-use Illuminate\Http\Request;
-
+use App\Reply;
+use App\Http\Requests\CommentRequest;
 class CommentController extends Controller
 {
     public function showComments(Post $post)

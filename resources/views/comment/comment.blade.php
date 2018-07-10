@@ -85,6 +85,10 @@ a{
     text-decoration: none;
     color: white;
 }
+a.reply{
+    text-decoration: none;
+    color: black;
+}
 </style>
 @endpush
 @section('page-header')
@@ -110,18 +114,62 @@ a{
                 <h2>{{$post->title}}</h2>
                 <h5><i>{{ date('D d-M-Y  g:i:s A',$post->created_at->timestamp) }}</i></h5>
                 <p style="word-break: break-all; text-align: justify;white-space: pre-line;">{{$post->blog_post}}</p>
-                <br>
                 <hr>
-                <h4>Comments</h4><br>
+                <h4>Comments</h4>
+                <hr>
+                <div class="panel-body comment-container" >
                 @foreach($comments as $row)
+                        <div class="well">
+                            <h5>{{$row->name}}</h5>
+                            <h6>Posted on {{ date('D d-M-Y  g:i:s A',$row->created_at->timestamp) }}</h6>
+                            
+                            <span><p>{{$row->comment}}</p></span>
+
+                            <div style="margin-left:10px;">
+                                <a style="cursor: pointer;" name_a="{{ $row->name }}" cid="{{ $row->id }}" token="{{ csrf_token() }}" class="reply">Reply</a>&nbsp;
+                                <div class="reply-form">
+                                    <!-- Dynamic Reply form -->
+                                        
+                                    
+                                </div>
+                                
+                                @foreach($row->reply as $rep)
+
+                                        <div class="well">
+                                            <i><b> {{ $rep->name }} </b></i>&nbsp;&nbsp;
+                                            <h6>Posted on {{ date('D d-M-Y  g:i:s A',$row->created_at->timestamp) }}</h6>
+                                            <span> {{ $rep->reply }} </span>
+                                            <div style="margin-left:10px;">
+                                                <a style="cursor: pointer;" rname="{{ $rep->name }}" rid="{{ $row->id }}" class="reply-to-reply" token="{{ csrf_token() }}">Reply</a>&nbsp;
+                        
+                                            </div>
+                                            <div class="reply-to-reply-form">
+                                                
+                                                
+                                                <!-- Dynamic Reply form -->
+                                                
+                                            </div>
+                                            
+                                        </div>
+
+                                @endforeach
+                                <hr>    
+                            </div>
+                        </div>
+                @endforeach
+                </div>
+               <!--  @foreach($comments as $row)
                 
                     <h5>{{$row->name}}</h5>
                     <h6>Posted on {{ date('D d-M-Y  g:i:s A',$row->created_at->timestamp) }}</h6>
                         <br>
                     <span><p>{{$row->comment}}</p></span>
+                    
+                    <a id="toggle_reply" href="#" class="reply"">view reply</a>
+                    <p><a href="" id="reply" class="reply" style="display: none;">Edit</a></p>
                     <hr>
             
-                @endforeach
+                @endforeach -->
 
                 <h4>Comment as guest</h4><br>
                 <form class="form-group" method="POST" action='{{url("{$post->id}/comment")}}'>
@@ -139,5 +187,11 @@ a{
                 </form>
             </div>
     </div>
-
+<script>
+$(document).ready(function(){
+    $("#toggle_reply").click(function(){
+        $("#reply").toggle();
+    });
+});
+</script>
 @endsection

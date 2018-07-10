@@ -37,3 +37,6 @@ Route::post('{postId}/comment', 'CommentController@addComment');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//reply 
+Route::resource('/replies','ReplyController');
