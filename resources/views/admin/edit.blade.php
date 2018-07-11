@@ -89,17 +89,33 @@ a{
 }
 </style>
 @endpush
+
+
 @section('page-header')
-    <div class="container">
-        <h1 class="h1" style="color: white;">Edit Post</h1>
+    <div class="parallax">
+        <div class="col-sm-12">
+            <center>
+                <div class="text">
+                    <h1 class="intro">The Street Food Index</h1>
+                    <ul id="links">
+                        <li><p>Welcome, Admin!</p></li>
+                        <li><a href="{{url('logout')}}"><i class="glyphicon glyphicon-plus"></i>Logout</a></li>    
+                    </ul>
+                </div>
+            </center>           
+        </div>          
     </div>
-    <hr>
+
 @endsection
 
 @section('page-content')
+<div class="container">
+        <h1 class="h1" style="color: white;">Edit Post</h1>
+    </div>
 	<div class="content">
         <div class="form-group">
         {!! Form::model($post, ['method'=>'PATCH','route' => ['admin.update', $post->id]]) !!}
+        {{ method_field('PATCH')}}
         {{ csrf_field() }}
             <div class="card">
                 <div class="card-body">

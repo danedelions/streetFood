@@ -83,8 +83,13 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         Post::where('id',$id)->update($request->only(['title', 'blog_post']));
         return redirect()->route('admin.index');
+
+        $post->where('id', $post->id)->update($request->only(['title', 'blog_post']));
+        return redirect()->route('admin/');
+
     }
 
     /**

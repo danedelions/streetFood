@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @push('css')
 	<style>
 	* {
@@ -114,11 +113,6 @@ a{
                 <a href='{{url("{$row->id}/comment")}}' style="color: black;">Add comment</a>
 		    </div>
         @endforeach
-
-
-<!-- 		<div class="footer">
-			<h2></h2>
-		</div> -->
 	</div>
 
 @endsection

@@ -132,6 +132,7 @@ a{
                                 {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                         </form>
                     </li>
+                    <li><a href='{{url("admin/{$row->id}/comment")}}' class="btn btn-info">View Post</a></li>
 			    </ul>
 		    </div>
 		    @endforeach

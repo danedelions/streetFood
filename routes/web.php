@@ -32,11 +32,12 @@ Route::get('post','PostController@showPosts');
 Route::get('{post}/comment', 'CommentController@showComments');
 Route::post('{postId}/comment', 'CommentController@addComment');
 
+Route::get('admin/{post}/comment', 'AdminCommentController@showComments');
+Route::get('admin/{post}/comment', 'AdminCommentController@showComments');
 // Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//reply 
 Route::resource('/replies','ReplyController');
