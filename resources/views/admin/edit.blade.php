@@ -109,7 +109,7 @@ a{
                     </div>
                     <div class="form-group col-sm-8">
                         <label>Post</label>
-                        {!! Form::textarea('post', $post->blog_post, ['size' => '50x10', 'class' => 'form-control']) !!}
+                        {!! Form::textarea('blog_post', $post->blog_post, ['size' => '50x10', 'class' => 'form-control']) !!}
                     </div>
                     <div>
                         {!! Form::submit('Save', ['type' => 'submit','class' => 'btn btn-success']) !!}
