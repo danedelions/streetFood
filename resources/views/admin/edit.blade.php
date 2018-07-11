@@ -100,6 +100,7 @@ a{
 	<div class="content">
         <div class="form-group">
         {!! Form::model($post, ['method'=>'PATCH','route' => ['admin.update', $post->id]]) !!}
+        {{ method_field('PATCH')}}
         {{ csrf_field() }}
             <div class="card">
                 <div class="card-body">

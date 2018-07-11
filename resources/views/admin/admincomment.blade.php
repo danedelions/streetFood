@@ -98,8 +98,8 @@ a.reply{
                 <div class="text">
                     <h1 class="intro">The Street Food Index</h1>
                     <ul id="links">
-                        <li><a href="{{url('post/')}}">Home</a></li>
-                        <li><a href="{{url('about')}}">About</a></li>   
+                        <li><p>Welcome, Admin!</p></li>
+                        <li><a href="{{url('logout')}}"><i class="glyphicon glyphicon-plus"></i>Logout</a></li>    
                     </ul>
                 </div>
             </center>           
@@ -116,11 +116,11 @@ a.reply{
                 <br><br>
                 <p style="word-break: break-all; text-align: justify;white-space: pre-line;">{{$post->blog_post}}</p>
                 <br>
-                <a href="{{url('post/')}}" class="reply"> << Back to home</a>
+                <a href="{{url('admin/')}}" class="reply"> << Back to home</a>
                 <hr>
                 <h4>Comments</h4>
                 <hr>
-                <div class="panel-body comment-container" >
+                <div class="panel-body admin-comment-container" >
                 @foreach($comments as $row)
                         <div class="well">
                             <h5><b>Posted by {{$row->name}}</b></h5>
@@ -175,11 +175,11 @@ a.reply{
             
                 @endforeach -->
 
-                <h4>Comment as guest</h4><br>
+                <h4>Comment as Admin</h4><br>
                 <form class="form-group" method="POST" action='{{url("{$post->id}/comment")}}'>
                     <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                     <div class="form-group col-sm-8">
-                        <input type="text" class="form-control" name="name" placeholder="Name (optional)..." value="Anonymous"></input>
+                        <input type="text" class="form-control" name="name" value="Admin"></input>
                     </div>
                     <div class="form-group col-sm-8">
                         <textarea class="form-control" name="comment" placeholder="Comment here..."></textarea>
