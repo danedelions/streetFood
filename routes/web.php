@@ -28,6 +28,8 @@ Route::get('about', function(){
 
 Route::get('post','PostController@getPostView');
 Route::get('post','PostController@showPosts');
+Route::get('archive','PostController@archivePost');
+
 
 Route::get('{post}/comment', 'CommentController@showComments');
 Route::post('{postId}/comment', 'CommentController@addComment');

@@ -7,7 +7,7 @@
 body, html {
     height: 100%;
     /*background-color: #474747;*/
-    background-image: url("img/4.png");
+    background-image: url("{{asset('img/4.png')}}");
     padding: 20px;
     background-attachment: fixed;
     background-position: center;
@@ -17,7 +17,7 @@ body, html {
 
 .parallax {
     /* The image used */
-    background-image: url("img/1.jpg");
+    background-image: url("{{asset('img/1.jpg')}}");
 
     /* Set a specific height */
     height: 400px;
@@ -94,7 +94,8 @@ a{
                     <h1 class="intro">The Street Food Index</h1>
                     <ul id="links">
                         <li><a href="{{url('post/')}}">Home</a></li>
-                        <li><a href="{{url('about')}}">About</a></li>   
+                        <li><a href="{{url('about')}}">About</a></li>
+                        <li><a href="{{url('archive')}}">Archive</a></li>      
                     </ul>
                 </div>
             </center>           
@@ -107,7 +108,7 @@ a{
         @foreach($posts as $row)
 			<div class="card">
 			    <h2>{{$row->title}}</h2>
-                <h5>Posted on {{ date('D d-M-Y  g:i:s A',$row->created_at->timestamp) }}</h5>
+                <h5>Posted on {{ date('D M-d-Y',$row->created_at->timestamp) }}</h5>
 			    <p style="word-break: break-all; text-align: justify;white-space: pre-line;">{{$row->blog_post}}</p>
                 <hr>
                 <a href='{{url("{$row->id}/comment")}}' style="color: black;">Add comment</a>

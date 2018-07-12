@@ -99,7 +99,8 @@ a.reply{
                     <h1 class="intro">The Street Food Index</h1>
                     <ul id="links">
                         <li><a href="{{url('post/')}}">Home</a></li>
-                        <li><a href="{{url('about')}}">About</a></li>   
+                        <li><a href="{{url('about')}}">About</a></li> 
+                        <li><a href="{{url('archive')}}">Archive</a></li>    
                     </ul>
                 </div>
             </center>           

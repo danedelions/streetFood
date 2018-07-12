@@ -1,7 +1,4 @@
 @extends('layouts.app')
-<!-- @push('css')
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
-@endpush -->
 @push('css')
 	<style>
 	* {
@@ -10,7 +7,7 @@
 body, html {
     height: 100%;
     /*background-color: #474747;*/
-    background-image: url("img/4.png");
+    background-image: url("{{asset('img/4.png')}}");
     padding: 20px;
     background-attachment: fixed;
     background-position: center;
@@ -20,7 +17,7 @@ body, html {
 
 .parallax {
     /* The image used */
-    background-image: url("img/1.jpg");
+    background-image: url("{{asset('img/1.jpg')}}");
 
     /* Set a specific height */
     height: 400px;
@@ -87,9 +84,15 @@ a{
     text-decoration: none;
     color: white;
 }
+
+.archive{
+    list-style: none;
+    color: black;
+    padding: 0;
+    margin: 0;
+}
 </style>
 @endpush
-
 @section('page-header')
     <div class="parallax">
         <div class="col-sm-12">
@@ -98,26 +101,30 @@ a{
                     <h1 class="intro">The Street Food Index</h1>
                     <ul id="links">
                         <li><a href="{{url('post/')}}">Home</a></li>
-                        <li><a href="{{url('post/about')}}">About</a></li>
-                        <li><a href="{{url('archive')}}">Archive</a></li>
-                    </ul>
+                        <li><a href="{{url('about')}}">About</a></li>
+                        <li><a href="{{url('archive')}}">Archive</a></li>     
+                    </ul
                 </div>
             </center>           
         </div>          
     </div>
 @endsection
 @section('page-content')
+
 	<div class="content">
-			<div class="card">
+        <div class="card">
+            Archives
+            <hr>
+            @foreach ($archives as $row)
+                    <ul class="archive">
+                        <li class="archive">
+                           <h3><a href="post/?month={{$row['month']}}&year={{$row['year']}}" class="archive">{{$row['month'].' '.$row['year']}}</a></h3>
+                        </li>                    
+                    </ul>
 
-			    <p>
-                    <h1 class="text">The Street Food Index is a food blog created by Ferdinand Bryle, Daniela, and Tiffany.</h1>         
-                </p>
-		    </div>
+            @endforeach
+        </div>
 
-
-		<div class="footer">
-			<h2></h2>
-		</div>
 	</div>
+
 @endsection
